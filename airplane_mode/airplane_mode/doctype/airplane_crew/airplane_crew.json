@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "autoname": "field:airplane_crew_id",
+ "creation": "2025-12-11 09:43:22.846711",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "airplane_crew_id",
+  "airplane_crew_name",
+  "is_on_duty",
+  "is_on_leave",
+  "column_break_ihkc",
+  "airline",
+  "designation"
+ ],
+ "fields": [
+  {
+   "fieldname": "airplane_crew_id",
+   "fieldtype": "Data",
+   "label": "Airplane Crew ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "airplane_crew_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Airplane Crew Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "airline",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Airline",
+   "options": "Airline"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_on_duty",
+   "fieldtype": "Check",
+   "label": "Is On Duty"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_on_leave",
+   "fieldtype": "Check",
+   "label": "Is On Leave"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "column_break_ihkc",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-11 12:58:45.368448",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Airplane Crew",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "airplane_crew_name,designation,airline",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

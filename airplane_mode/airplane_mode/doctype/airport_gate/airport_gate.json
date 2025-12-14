@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "autoname": "field:airport_gate",
+ "creation": "2025-12-11 09:55:42.870889",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "airport_gate",
+  "airport",
+  "capacity"
+ ],
+ "fields": [
+  {
+   "fieldname": "airport_gate",
+   "fieldtype": "Data",
+   "label": "Airport Gate",
+   "unique": 1
+  },
+  {
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Airport",
+   "options": "Airport"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Capacity"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-11 12:32:51.503118",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Airport Gate",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

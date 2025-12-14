@@ -1,0 +1,12 @@
+
+	<div class="card">
+		<div class="card-body">
+			{% set get_airline = frappe.db.get_value("Airplane", {"name": airplane}, "airline") %}
+			<h5>{{ get_airline }}</h5>
+			<p>{{ source_airport_code }} &rarr; {{ destination_airport_code }}</p>
+			<p>{{ frappe.utils.format_date(date_of_departure, "d MMMM, YYYY") }} &#124; {{ time_of_departure }} &#124; {{frappe.utils.format_duration(duration)}}</p>
+			<a href="/flights/{{name}}">View Flight</a>
+		</div>
+  </div>
+
+<!-- this is a sample default list template -->

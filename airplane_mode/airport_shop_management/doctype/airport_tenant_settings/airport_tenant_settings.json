@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-11 19:00:10.959468",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "default_rent_amount",
+  "default_deposit_amount",
+  "disabled_rent_reminder"
+ ],
+ "fields": [
+  {
+   "fieldname": "default_rent_amount",
+   "fieldtype": "Currency",
+   "label": "Default Rent Amount / Tenant"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled_rent_reminder",
+   "fieldtype": "Check",
+   "label": "Disabled Rent Reminder"
+  },
+  {
+   "fieldname": "default_deposit_amount",
+   "fieldtype": "Currency",
+   "label": "Default Deposit Amount / Tenant"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-12-11 20:29:19.169121",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Airport Tenant Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

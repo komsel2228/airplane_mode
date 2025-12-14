@@ -1,0 +1,170 @@
+{
+ "actions": [],
+ "allow_auto_repeat": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-12-11 21:18:54.907915",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "status",
+  "airport",
+  "is_paid",
+  "column_break_dlkr",
+  "posting_date",
+  "rent_type",
+  "amended_from",
+  "section_break_kxmf",
+  "airport_tenant",
+  "tenant_name",
+  "column_break_msvw",
+  "contract_number",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "RP-.YYYY.-.MM.-.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "airport_tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant ID",
+   "options": "Airport Tenant",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "airport_tenant.airport",
+   "fieldname": "airport",
+   "fieldtype": "Data",
+   "label": "Airport",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dlkr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_paid",
+   "fieldtype": "Check",
+   "label": "Is Paid",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "airport_tenant.tenant_name",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tenant Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rent Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "rent_type",
+   "fieldtype": "Select",
+   "label": "Rent Type",
+   "options": "\nDeposit\nRent",
+   "reqd": 1
+  },
+  {
+   "default": "Unpaid",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Unpaid\nPaid",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_number",
+   "fieldtype": "Data",
+   "label": "Contract Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_kxmf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_msvw",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Reference",
+   "link_doctype": "Auto Repeat",
+   "link_fieldname": "reference_document"
+  }
+ ],
+ "modified": "2025-12-12 15:55:24.449474",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Rent Payment",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Unpaid"
+  },
+  {
+   "color": "Green",
+   "title": "Paid"
+  }
+ ]
+}
