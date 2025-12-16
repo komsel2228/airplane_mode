@@ -8,6 +8,8 @@
   "code",
   "city",
   "country",
+  "column_break_voft",
+  "address",
   "tab_terminal",
   "terminal_details"
  ],
@@ -43,12 +45,21 @@
    "fieldtype": "Table",
    "label": "Terminal Details",
    "options": "Airport Detail Terminal"
+  },
+  {
+   "fieldname": "column_break_voft",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-13 09:21:32.776670",
+ "modified": "2025-12-15 09:34:38.510600",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airport",

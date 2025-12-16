@@ -23,7 +23,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Sub Terminal",
-   "options": "Airport Sub Terminal"
+   "options": "Airport Terminal"
   },
   {
    "fieldname": "information",
@@ -35,7 +35,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-12-13 08:43:06.256718",
+ "modified": "2025-12-16 17:34:42.053192",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airport Detail Terminal",
