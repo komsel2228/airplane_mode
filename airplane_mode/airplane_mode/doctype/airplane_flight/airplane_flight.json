@@ -1,5 +1,4 @@
 {
- "_liked_by": "[\"Administrator\"]",
  "actions": [],
  "allow_guest_to_view": 1,
  "autoname": "format:{airplane}-{MM}-{YYYY}-{#####}",
@@ -159,10 +158,12 @@
    "read_only": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "gate",
    "fieldtype": "Link",
    "label": "Gate",
    "options": "Airport Gate",
+   "read_only": 1,
    "reqd": 1
   }
  ],
@@ -177,7 +178,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-12-11 13:16:37.628701",
+ "modified": "2025-12-16 23:45:29.564053",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
@@ -256,5 +257,6 @@
    "color": "Red",
    "title": "Cancelled"
   }
- ]
+ ],
+ "track_changes": 1
 }

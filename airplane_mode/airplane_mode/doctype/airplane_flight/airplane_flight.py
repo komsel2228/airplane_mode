@@ -15,3 +15,11 @@ class AirplaneFlight(WebsiteGenerator):
 			frappe.db.set_value("Airplane Crew", i.airplane_crew, "is_on_duty", 1)
 
 		
+@frappe.whitelist()
+def change_gate(docname,to_gate):
+	get_airplane_ticket = frappe.get_all('Airplane Ticket',{'flight':docname,'status':('!=','Boarded')},'name')
+	if get_airplane_ticket:
+		for i in get_airplane_ticket:
+			frappe.db.set_value("Airplane Ticket", i.name, 'gate', to_gate, update_modified=True)
+
+	return to_gate
