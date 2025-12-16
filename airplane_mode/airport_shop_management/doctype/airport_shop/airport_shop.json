@@ -5,7 +5,6 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "airport",
   "shop_id",
   "shop_type",
   "shop_area",
@@ -13,6 +12,13 @@
   "column_break_tqpy",
   "airport_tenant",
   "is_available",
+  "disabled",
+  "section_break_zaal",
+  "airport",
+  "terminal",
+  "sub_terminal",
+  "column_break_ufsh",
+  "location",
   "section_break_dcdx",
   "more_information"
  ],
@@ -21,6 +27,7 @@
    "fieldname": "airport",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Airport",
    "options": "Airport"
   },
@@ -54,35 +61,70 @@
   },
   {
    "fieldname": "airport_tenant",
-   "fieldtype": "Data",
+   "fieldtype": "Read Only",
+   "in_standard_filter": 1,
    "label": "Airport Tenant",
-   "no_copy": 1
+   "no_copy": 1,
+   "read_only": 1
   },
   {
    "fieldname": "section_break_dcdx",
    "fieldtype": "Section Break"
   },
   {
-   "default": "1",
    "fieldname": "is_available",
-   "fieldtype": "Check",
+   "fieldtype": "Select",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Is Available for rent",
-   "no_copy": 1
+   "no_copy": 1,
+   "options": "\nYes\nNo",
+   "reqd": 1
   },
   {
    "fieldname": "shop_type",
    "fieldtype": "Link",
-   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Shop Type",
    "options": "Shop Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "section_break_zaal",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "terminal",
+   "fieldtype": "Link",
+   "label": "Terminal",
+   "options": "Airport Terminal"
+  },
+  {
+   "fieldname": "sub_terminal",
+   "fieldtype": "Link",
+   "label": "Sub Terminal",
+   "options": "Airport Terminal"
+  },
+  {
+   "fieldname": "column_break_ufsh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Small Text",
+   "label": "Location"
   }
  ],
  "grid_page_length": 50,
  "image_field": "image_shop",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-13 09:40:24.919771",
+ "modified": "2025-12-16 17:34:27.513797",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Shop",
