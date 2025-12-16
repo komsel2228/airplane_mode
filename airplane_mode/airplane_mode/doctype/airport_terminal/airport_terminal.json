@@ -1,35 +1,85 @@
 {
  "actions": [],
- "autoname": "field:airport_terminal",
+ "autoname": "field:airport_terminal_name",
  "creation": "2025-12-13 08:29:58.087958",
+ "default_view": "Tree",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "airport_terminal",
-  "disabled"
+  "airport_terminal_name",
+  "parent_airport_terminal",
+  "is_group",
+  "lft",
+  "rgt",
+  "old_parent"
  ],
  "fields": [
   {
-   "fieldname": "airport_terminal",
-   "fieldtype": "Data",
-   "label": "Airport Terminal",
-   "unique": 1
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   },
   {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "bold": 1,
    "default": "0",
-   "fieldname": "disabled",
+   "fieldname": "is_group",
    "fieldtype": "Check",
-   "label": "Disabled"
+   "in_list_view": 1,
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "ignore_user_permissions": 1,
+   "label": "Old Parent",
+   "no_copy": 1,
+   "options": "Airport Terminal",
+   "print_hide": 1,
+   "report_hide": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "parent_airport_terminal",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "in_list_view": 1,
+   "label": "Parent Airport Terminal",
+   "options": "Airport Terminal"
+  },
+  {
+   "fieldname": "airport_terminal_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Airport Terminal Name",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
- "index_web_pages_for_search": 1,
+ "is_tree": 1,
  "links": [],
- "modified": "2025-12-13 08:44:52.181302",
+ "modified": "2025-12-16 16:34:50.761050",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airport Terminal",
  "naming_rule": "By fieldname",
+ "nsm_parent_field": "parent_airport_terminal",
  "owner": "Administrator",
  "permissions": [
   {
