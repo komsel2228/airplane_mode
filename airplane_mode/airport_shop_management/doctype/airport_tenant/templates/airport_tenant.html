@@ -1,0 +1,52 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<img src="{{doc.image_tenant}}" style="height:200px;border-radius:100%;">
+<p></p>
+<p><b>{{doc.tenant_name}}</b></p>
+<p>{{doc.tenant_info or ''}}</p>
+
+    <h5><b>Information Tenant</b></h5>
+
+    <div class="card">
+        <table>
+            <tbody>
+                <tr>
+                    <td style="width:20%;" >Tenant ID</td>
+                    <td>{{doc.name or ''}}</td>
+                </tr>
+
+                <tr>
+                    <td style="width:20%;" >Tenant Name</td>
+                    <td>{{doc.tenant_name or ''}}</td>
+                </tr>
+
+                <tr>
+                    <td style="width:20%;">Lokasi</td>
+                    <td>{{doc.airport or ''}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:20%;">Operational Hours</td>
+                    <td>{{doc.operational_hours or ''}}</td>
+                </tr>
+
+                <tr>
+                    <td style="width:20%;">Website</td>
+                    <td>
+                        <a href="{{doc.tenant_website or ''}}" target="_blank">
+                        {{doc.tenant_website}}
+                        </a>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td style="width:20%;">Note</td>
+                    <td>{{doc.tenant_note or ''}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
