@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "autoname": "naming_series:",
  "creation": "2025-12-11 13:46:25.169239",
  "doctype": "DocType",
@@ -8,15 +9,22 @@
   "naming_series",
   "tenant_name",
   "tenant_group",
-  "tenant_owner",
-  "tenant_email",
   "column_break_yqzp",
   "airport",
-  "shop_type",
+  "airport_shop",
   "disabled",
   "image_tenant",
+  "published",
+  "route",
   "section_break_szdf",
+  "tenant_email",
+  "tenant_owner",
+  "column_break_ouvl",
+  "tenant_website",
+  "operational_hours",
+  "section_break_gobg",
   "tenant_info",
+  "tenant_note",
   "contract_details_tab",
   "date_of_joining",
   "column_break_wzyq",
@@ -30,13 +38,15 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Tenant Name",
+   "no_copy": 1,
    "reqd": 1
   },
   {
    "default": "0",
    "fieldname": "disabled",
    "fieldtype": "Check",
-   "label": "Disabled"
+   "label": "Disabled",
+   "no_copy": 1
   },
   {
    "fieldname": "column_break_yqzp",
@@ -46,12 +56,14 @@
    "fieldname": "tenant_owner",
    "fieldtype": "Data",
    "label": "Tenant Owner",
+   "no_copy": 1,
    "reqd": 1
   },
   {
    "fieldname": "tenant_email",
    "fieldtype": "Data",
    "label": "Tenant Email",
+   "no_copy": 1,
    "options": "Email",
    "reqd": 1
   },
@@ -59,6 +71,7 @@
    "fieldname": "tenant_group",
    "fieldtype": "Select",
    "label": "Tenant Group",
+   "no_copy": 1,
    "options": "\nFood & Beverage\nRetail\nServices",
    "reqd": 1
   },
@@ -99,6 +112,7 @@
    "hidden": 1,
    "in_preview": 1,
    "label": "Image Tenant",
+   "no_copy": 1,
    "options": "Image"
   },
   {
@@ -112,17 +126,11 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "shop_type",
-   "fieldtype": "Link",
-   "label": "Shop Type",
-   "options": "Shop Type",
-   "reqd": 1
-  },
-  {
    "fieldname": "airport",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Airport",
+   "no_copy": 1,
    "options": "Airport",
    "reqd": 1
   },
@@ -132,11 +140,58 @@
    "label": "Series",
    "options": "AT-.YYYY.-.MM.-.####",
    "reqd": 1
+  },
+  {
+   "fieldname": "tenant_website",
+   "fieldtype": "Data",
+   "label": "Tenant Website",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "operational_hours",
+   "fieldtype": "Data",
+   "label": "Operational Hours",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "column_break_ouvl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_gobg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "tenant_note",
+   "fieldtype": "Small Text",
+   "label": "Tenant Note"
+  },
+  {
+   "fieldname": "airport_shop",
+   "fieldtype": "Link",
+   "label": "Airport Shop",
+   "options": "Airport Shop",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Is Published?",
+   "no_copy": 1
   }
  ],
  "grid_page_length": 50,
+ "has_web_view": 1,
  "image_field": "image_tenant",
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "links": [
   {
    "group": "Reference",
@@ -144,7 +199,7 @@
    "link_fieldname": "airport_tenant"
   }
  ],
- "modified": "2025-12-12 17:13:37.754831",
+ "modified": "2025-12-16 16:03:11.710425",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Tenant",
@@ -164,9 +219,11 @@
    "write": 1
   }
  ],
+ "route": "tenant",
  "row_format": "Dynamic",
  "search_fields": "tenant_name",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

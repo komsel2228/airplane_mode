@@ -3,8 +3,8 @@
 
 frappe.ui.form.on("Airport Tenant", {
 	setup(frm) {
-        frm.set_query("shop_type", function() {
-			return { filters: { enabled: 1 } };
+    frm.set_query("airport_shop", function() {
+			return { filters: { airport: frm.doc.airport, disabled:0 }};
 		});
 	},
   refresh(frm){
@@ -25,6 +25,12 @@ frappe.ui.form.on("Airport Tenant", {
 				__("Create")
 		);
   },
+  airport(frm) {
+    frm.set_value('airport_shop',undefined)
+    frm.set_query("airport_shop", function() {
+			return { filters: { airport: frm.doc.airport, disabled:0 }};
+		});
+	},
   update_contract_end_date(frm, cdt, cdn) {
     let row = locals[cdt][cdn]
     if(row.start_date && row.contract_term) {
@@ -38,7 +44,13 @@ frappe.ui.form.on("Airport Tenant", {
 
 frappe.ui.form.on("Airport Tenant Contract", {
   start_date(frm, cdt, cdn) {
+    let row = locals[cdt][cdn]
     frm.events.update_contract_end_date(frm, cdt, cdn);
+    if(row.start_date){
+      frappe.db.get_single_value("Airport Tenant Settings", "default_rent_amount").then((val) => {
+        frappe.model.set_value(cdt, cdn, "rent_amount", val)
+      });
+    }
 
   },
   contract_term(frm, cdt, cdn) {

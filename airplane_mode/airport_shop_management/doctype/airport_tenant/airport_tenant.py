@@ -2,10 +2,11 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.model.document import Document
+# from frappe.model.document import Document
+from frappe.website.website_generator import WebsiteGenerator
 from frappe.utils import flt
 
-class AirportTenant(Document):
+class AirportTenant(WebsiteGenerator):
 	def validate(self):
 		if(self.deposit_amount == flt(0)):
 			self.deposit_amount = flt(self.get_defa())
