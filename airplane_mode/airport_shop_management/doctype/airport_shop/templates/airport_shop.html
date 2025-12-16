@@ -1,0 +1,58 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<img src="{{doc.image_shop}}" style="height:200px;border-radius:100%;">
+<p></p>
+<p><b>{{doc.name}}</b></p>
+<!-- <p>{{doc.tenant_info or ''}}</p> -->
+
+    <h5><b>Information Shop</b></h5>
+
+    <div class="card">
+        <table>
+            <tbody>
+                <tr>
+                    <td style="width:20%;" >Shop ID</td>
+                    <td>{{doc.name or ''}}</td>
+                </tr>
+
+                <tr>
+                    <td style="width:20%;" >Shop Type</td>
+                    <td>{{doc.shop_type or ''}}</td>
+                </tr>
+
+                <tr>
+                    <td style="width:20%;">Shop Area</td>
+                    <td>{{doc.shop_area or ''}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:20%;">Location</td>
+                    <td>{{doc.location or ''}}</td>
+                </tr>
+
+                <tr>
+                    <td style="width:20%;">Airport</td>
+                    <td>{{doc.airport or ''}}</td>
+                </tr>
+
+                 <tr>
+                    <td style="width:20%;">Terminal</td>
+                    <td>{{doc.terminal or ''}}</td>
+                </tr>
+
+                <tr>
+                    <td style="width:20%;">Sub Terminal</td>
+                    <td>{{doc.sub_terminal or ''}}</td>
+                </tr>
+            
+                <tr>
+                    <td style="width:20%;">Note</td>
+                    <td>{{doc.more_information or ''}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
