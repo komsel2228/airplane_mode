@@ -1,0 +1,200 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2025-12-17 05:16:50.085612",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "shop_name",
+  "shop_type",
+  "column_break_xrmd",
+  "status",
+  "posting_date",
+  "section_break_nwtt",
+  "first_name",
+  "last_name",
+  "mobile_no",
+  "email",
+  "column_break_xrtb",
+  "website",
+  "address",
+  "section_break_oimi",
+  "airport_shop",
+  "airport",
+  "terminal",
+  "sub_terminal",
+  "column_break_kxwb",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "LEAD-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Phone",
+   "label": "Mobile No",
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_xrmd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shop Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop_type",
+   "fieldtype": "Link",
+   "label": "Shop Type",
+   "options": "Shop Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_nwtt",
+   "fieldtype": "Section Break",
+   "label": "Contact Info"
+  },
+  {
+   "fieldname": "column_break_xrtb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Lead",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nLead\nTenant",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_oimi",
+   "fieldtype": "Section Break",
+   "label": "Interest"
+  },
+  {
+   "fetch_from": "airport_shop.airport",
+   "fieldname": "airport",
+   "fieldtype": "Data",
+   "label": "Airport",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "airport_shop.terminal",
+   "fieldname": "terminal",
+   "fieldtype": "Data",
+   "label": "Terminal",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "airport_shop.sub_terminal",
+   "fieldname": "sub_terminal",
+   "fieldtype": "Data",
+   "label": "Sub Terminal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kxwb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "airport_shop",
+   "fieldtype": "Link",
+   "label": "Airport Shop",
+   "options": "Airport Shop",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "read_only": 1,
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-17 07:07:43.951937",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Airport Shop Lead",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "shop_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Lead"
+  },
+  {
+   "color": "Green",
+   "title": "Tenant"
+  }
+ ]
+}
