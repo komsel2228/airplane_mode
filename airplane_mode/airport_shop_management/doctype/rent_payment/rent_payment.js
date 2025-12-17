@@ -9,7 +9,7 @@ frappe.ui.form.on("Rent Payment", {
 					frappe.ui.form.is_saving = true;
 					frappe.call({
 						method: "airplane_mode.airport_shop_management.doctype.rent_payment.rent_payment.update_status_document",
-						args: {"status": "Unpaid", "name": frm.doc.name},
+						args: {"status": "Unpaid", "name": frm.doc.name,'tenant':frm.doc.airport_tenant},
 						callback: function(r) {frm.reload_doc()},
 						always: function() {
 							frappe.ui.form.is_saving = false;

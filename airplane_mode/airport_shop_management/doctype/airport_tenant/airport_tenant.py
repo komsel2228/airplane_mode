@@ -36,13 +36,15 @@ def create_rent_payment(source_name, target_doc=None):
     def update_item(source, target, source_parent):
     	start_date = frappe.get_value('Airport Tenant Contract',{'parent':source.name,'is_completed':0},'start_date')
     	rent_amount = frappe.get_value('Airport Tenant Contract',{'parent':source.name,'is_completed':0},'rent_amount')
+    	currency = frappe.get_value('Airport Tenant Contract',{'parent':source.name,'is_completed':0},'currency')
     	contract_number = frappe.get_value('Airport Tenant Contract',{'parent':source.name,'is_completed':0},'contract_number')
-    	target.airport_tenant = source.name
+    	target.airport = source.airport
     	target.posting_date = start_date
     	target.rent_type = "Rent"
     	target.is_paid = 0
     	target.amount = flt(rent_amount)
     	target.contract_number = contract_number
+    	target.currency = currency
 
     doclist = get_mapped_doc("Airport Tenant", source_name, {
 		"Airport Tenant": {

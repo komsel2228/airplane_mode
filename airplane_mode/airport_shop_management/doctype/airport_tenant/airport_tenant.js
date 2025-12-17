@@ -8,22 +8,24 @@ frappe.ui.form.on("Airport Tenant", {
 		});
 	},
   refresh(frm){
-    frm.add_custom_button(__("Deposit Payment"), function () {
-				frappe.model.open_mapped_doc({
-					method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.create_deposit_payment",
-					frm: frm,
-				});
-			},
-				__("Create")
-		);
-    frm.add_custom_button(__("Rent Payment"), function () {
-				frappe.model.open_mapped_doc({
-					method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.create_rent_payment",
-					frm: frm,
-				});
-			},
-				__("Create")
-		);
+    if(frm.doc.status == 'Booked'){
+      frm.add_custom_button(__("Deposit Payment"), function () {
+          frappe.model.open_mapped_doc({
+            method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.create_deposit_payment",
+            frm: frm,
+          });
+        },
+          __("Create")
+      );
+      frm.add_custom_button(__("Rent Payment"), function () {
+          frappe.model.open_mapped_doc({
+            method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.create_rent_payment",
+            frm: frm,
+          });
+        },
+          __("Create")
+      );
+    }
   },
   airport(frm) {
     frm.set_value('airport_shop',undefined)

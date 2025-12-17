@@ -15,8 +15,6 @@
   "airport_tenant",
   "is_available",
   "disabled",
-  "published",
-  "route",
   "section_break_zaal",
   "airport",
   "terminal",
@@ -24,7 +22,10 @@
   "column_break_ufsh",
   "location",
   "section_break_dcdx",
-  "more_information"
+  "more_information",
+  "section_break_ifvd",
+  "published",
+  "route"
  ],
  "fields": [
   {
@@ -133,7 +134,12 @@
   {
    "fieldname": "route",
    "fieldtype": "Data",
-   "label": "Route"
+   "label": "Route",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ifvd",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
@@ -142,7 +148,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2025-12-17 13:55:01.008313",
+ "modified": "2025-12-17 20:17:54.805913",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Shop",

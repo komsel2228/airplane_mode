@@ -3,9 +3,15 @@
 
 import frappe
 from frappe.model.document import Document
-
+from frappe.utils import money_in_words, get_first_day, get_last_day
+from frappe.utils.data import format_date
 
 class RentPayment(Document):
+	def validate(doc):
+		# if(doc.notes == None or doc.notes == ''):
+		doc.notes = f"Rent Payment for periode {format_date(get_first_day(doc.posting_date))} until {format_date(get_last_day(doc.posting_date))}"
+		doc.in_word = money_in_words(doc.amount,"IDR")
+		
 	@frappe.whitelist()
 	def check_start_date(doc, method=None):
 		start_date = frappe.get_value('Airport Tenant Contract',{'parent': doc.airport_tenant,'is_completed':0,'contract_number':doc.contract_number},'start_date')
@@ -13,10 +19,11 @@ class RentPayment(Document):
 			return start_date
 
 @frappe.whitelist()
-def update_status_document(status, name):
+def update_status_document(status, name,tenant):
 	if status == 'Unpaid':
 		frappe.db.set_value('Rent Payment', name, "is_paid", 1)
 		frappe.db.set_value('Rent Payment', name, "status","Paid")
+		frappe.db.set_value('Airport Tenant', tenant, "status","Rent")
 
 @frappe.whitelist()
 def create_auto_repeat(source_name, target_doc=None):
