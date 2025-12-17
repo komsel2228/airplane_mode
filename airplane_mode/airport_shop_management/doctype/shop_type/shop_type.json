@@ -1,4 +1,5 @@
 {
+ "_liked_by": "[\"Administrator\"]",
  "actions": [],
  "autoname": "field:shop_type",
  "creation": "2025-12-11 19:20:42.729998",
@@ -17,7 +18,7 @@
    "unique": 1
   },
   {
-   "default": "0",
+   "default": "1",
    "fieldname": "enabled",
    "fieldtype": "Check",
    "in_list_view": 1,
@@ -27,7 +28,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-11 19:23:27.678273",
+ "modified": "2025-12-17 12:44:53.893777",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop Type",

@@ -28,6 +28,11 @@
 									<td>{{doc.shop_area or ""}}</td>
 								</tr>
 								<tr>
+									<td>Airport</td>
+									<td>:</td>
+									<td>{{doc.airport or ""}}</td>
+								</tr>
+								<tr>
 									<td colspan = 3 style="text-align: left;">
 										{% if doc.is_available == "Yes" %}
 											<h4><span class="label success">Available</span></h4>
@@ -49,14 +54,12 @@
 						{% else %}
 							<a href="/shop/{{name}}"><button class='primary'>View Details</button></a>
 							<br>
-							<a href="/contact-us-for-rent"><button class='warning'>Contact Us For Rent</button></a>
+							<!-- <a href="/contact-us-for-rent"><button class='warning'>Contact Us For Rent</button></a> -->
+							<a href="/contact-us-for-rent/new?shop_id={{doc.shop_id or ''}}&airport={{doc.airport or ''}}&terminal={{doc.terminal or ''}}&sub_terminal={{doc.sub_terminal or ''}}"><button class='warning'>Contact Us For Rent</button></a>
 						{% endif %}	
 									</td>
 								</tr>
-
 							</tbody>
-
-
 						</table>
 			
 					</td>
