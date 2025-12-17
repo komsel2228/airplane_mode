@@ -1,0 +1,40 @@
+[
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": "{\"filters\":[],\"fields\":[[\"name\",\"Airport Shop\"],[\"shop_area\",\"Airport Shop\"],[\"shop_type\",\"Airport Shop\"],[\"airport\",\"Airport Shop\"],[\"terminal\",\"Airport Shop\"],[\"sub_terminal\",\"Airport Shop\"],[\"location\",\"Airport Shop\"],[\"disabled\",\"Airport Shop\"]],\"order_by\":\"`tabAirport Shop`.`modified` desc\",\"add_totals_row\":0,\"page_length\":20,\"column_widths\":{\"name\":96,\"shop_area\":127,\"shop_type\":122,\"airport\":189,\"terminal\":120,\"sub_terminal\":202,\"location\":431,\"disabled\":120},\"group_by\":null}",
+  "letter_head": null,
+  "modified": "2025-12-18 00:38:41.831194",
+  "module": "Airport Shop Management",
+  "name": "Airport-Shop",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Airport Shop",
+  "reference_report": null,
+  "report_name": "Airport-Shop",
+  "report_script": null,
+  "report_type": "Report Builder",
+  "roles": [
+   {
+    "parent": "Airport-Shop",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Airport-Shop",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "API Access"
+   }
+  ],
+  "timeout": 0
+ }
+]

@@ -257,6 +257,12 @@ fixtures = [
         "filters":	{
             "name": ["in", "Rent Receipt"]
         }
+	},
+     {
+        "doctype": "Report",
+        "filters":	{
+            "name": ["in", "Airport-Shop"]
+        }
 	}
 ]
 
