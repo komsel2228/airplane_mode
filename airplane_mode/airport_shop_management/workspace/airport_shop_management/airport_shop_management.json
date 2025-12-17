@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"HAWT4wwsm9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Airport Shop Management</span>\",\"col\":12}},{\"id\":\"zObZLf4dhb\",\"type\":\"card\",\"data\":{\"card_name\":\"Documents\",\"col\":4}},{\"id\":\"0qkcfv28da\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+ "content": "[{\"id\":\"HAWT4wwsm9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Airport Shop Management</span>\",\"col\":12}},{\"id\":\"zObZLf4dhb\",\"type\":\"card\",\"data\":{\"card_name\":\"Documents\",\"col\":4}},{\"id\":\"t-h5vEwECl\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"0qkcfv28da\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"G3Ws9zud78\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Contact Us For Rent\",\"col\":3}}]",
  "creation": "2025-12-13 07:45:07.810368",
  "custom_blocks": [],
  "docstatus": 0,
@@ -44,6 +44,16 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Airport Shop Lead",
+   "link_count": 0,
+   "link_to": "Airport Shop Lead",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Airport Tenant",
    "link_count": 0,
    "link_to": "Airport Tenant",
@@ -74,6 +84,25 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Masters",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airport Shop",
+   "link_count": 0,
+   "link_to": "Airport Shop",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Shop Type",
    "link_count": 0,
    "link_to": "Shop Type",
@@ -82,7 +111,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-12-13 08:50:54.069718",
+ "modified": "2025-12-17 11:01:23.687518",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Shop Management",
@@ -93,6 +122,14 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 2.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Contact Us For Rent",
+   "type": "URL",
+   "url": "/contact-us-for-rent"
+  }
+ ],
  "title": "Airport Shop Management"
 }
