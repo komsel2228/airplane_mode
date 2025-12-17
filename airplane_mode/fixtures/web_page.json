@@ -13,7 +13,6 @@
   "full_width": 1,
   "header": null,
   "insert_style": 1,
-  "is_standard": 1,
   "javascript": null,
   "main_section": null,
   "main_section_html": "<div style=\"width:500px; height:200px; margin:10px; background-color: {{ color }};\"></div>",

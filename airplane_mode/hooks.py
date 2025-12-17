@@ -251,5 +251,12 @@ fixtures = [
         "filters": [
             ["title", "=", "Show Me"]
         ]
-    }
+    },
+    {
+        "doctype": "Print Format",
+        "filters":	{
+            "name": ["in", "Rent Receipt"]
+        }
+	}
 ]
+
