@@ -10,7 +10,19 @@ class AirportTenant(WebsiteGenerator):
 	def validate(self):
 		if(self.deposit_amount == flt(0)):
 			self.deposit_amount = flt(self.get_defa())
-	
+
+	def on_update(self):
+		if(self.route==None or self.route == ''):
+			route = f"tenant/{self.name}"
+			frappe.db.set_value('Airport Tenant', self.name,'route', route, update_modified=True)
+			self.reload()
+
+		if(self.airport_shop): 
+			if self.status == 'Expired':
+				frappe.db.set_value('Airport Shop', self.airport_shop,'is_available', "Yes", update_modified=True)
+			else:
+				frappe.db.set_value('Airport Shop', self.airport_shop,'is_available', "No", update_modified=True)
+
 	def get_defa(self):
 		defa_deposit_amount = frappe.db.get_single_value('Airport Tenant Settings','default_deposit_amount')
 		return defa_deposit_amount

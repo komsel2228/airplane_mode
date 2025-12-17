@@ -1,4 +1,5 @@
 {
+ "_liked_by": "[\"Administrator\"]",
  "actions": [],
  "allow_guest_to_view": 1,
  "autoname": "naming_series:",
@@ -9,13 +10,12 @@
   "naming_series",
   "tenant_name",
   "tenant_group",
+  "image_tenant",
   "column_break_yqzp",
+  "status",
   "airport",
   "airport_shop",
   "disabled",
-  "image_tenant",
-  "published",
-  "route",
   "section_break_szdf",
   "tenant_email",
   "tenant_owner",
@@ -25,6 +25,9 @@
   "section_break_gobg",
   "tenant_info",
   "tenant_note",
+  "section_break_kbaj",
+  "published",
+  "route",
   "contract_details_tab",
   "date_of_joining",
   "column_break_wzyq",
@@ -165,7 +168,8 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route",
-   "no_copy": 1
+   "no_copy": 1,
+   "read_only": 1
   },
   {
    "fieldname": "tenant_note",
@@ -185,6 +189,18 @@
    "fieldtype": "Check",
    "label": "Is Published?",
    "no_copy": 1
+  },
+  {
+   "fieldname": "section_break_kbaj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Booked",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nBooked\nRent\nExpired",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
@@ -199,7 +215,7 @@
    "link_fieldname": "airport_tenant"
   }
  ],
- "modified": "2025-12-16 16:03:11.710425",
+ "modified": "2025-12-17 13:30:37.745056",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Tenant",
@@ -224,6 +240,19 @@
  "search_fields": "tenant_name",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Blue",
+   "title": "Booked"
+  },
+  {
+   "color": "Green",
+   "title": "Rent"
+  },
+  {
+   "color": "Red",
+   "title": "Expired"
+  }
+ ],
  "track_changes": 1
 }
