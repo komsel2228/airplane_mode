@@ -140,7 +140,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2025-12-16 20:28:42.101360",
+ "modified": "2025-12-17 06:52:32.671372",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Shop",
@@ -163,6 +163,7 @@
  "route": "shop",
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "search_fields": "airport,terminal,sub_terminal",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

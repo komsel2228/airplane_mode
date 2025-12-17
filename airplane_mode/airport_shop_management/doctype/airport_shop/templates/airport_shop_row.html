@@ -3,7 +3,12 @@
 	   <table>
 			<tbody>
 				<tr>
-					<td style="width:20%;"><img src="{{doc.image_shop}}" style="height:100px;border-radius:100%;"></td>
+					<td>
+						<table>
+							<tr><td><img src="{{doc.image_shop}}" style="height:100px;border-radius:100%;"></td></tr>
+
+						</table>
+					</td>
 					<td>
 						<table>
 							<tbody>
@@ -22,10 +27,39 @@
 									<td>:</td>
 									<td>{{doc.shop_area or ""}}</td>
 								</tr>
+								<tr>
+									<td colspan = 3 style="text-align: left;">
+										{% if doc.is_available == "Yes" %}
+											<h4><span class="label success">Available</span></h4>
+										{% else %}
+											<h4><span class="label error">Not Available</span></h4>
+										{% endif %}
+									</td>
+								</tr>
 							</tbody>
 						</table>
 					</td>
-					<td> <a href="/shop/{{name}}"><button class='primary'>View Details</button></a></td>
+					<td>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										{% if doc.is_available == "Yes" %}
+							<a href="/shop/{{name}}"><button class='primary'>View Details</button></a> 
+						{% else %}
+							<a href="/shop/{{name}}"><button class='primary'>View Details</button></a>
+							<br>
+							<a href="/contact-us-for-rent"><button class='warning'>Contact Us For Rent</button></a>
+						{% endif %}	
+									</td>
+								</tr>
+
+							</tbody>
+
+
+						</table>
+			
+					</td>
 				</tr>
 			</tbody>
 	   </table>
