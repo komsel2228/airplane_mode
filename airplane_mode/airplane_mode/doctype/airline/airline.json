@@ -1,10 +1,12 @@
 {
+ "_liked_by": "[\"Administrator\"]",
  "actions": [],
  "autoname": "prompt",
  "creation": "2025-09-24 18:35:12.587484",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "airline_code",
   "headquarters",
   "founding_year",
   "column_break_vkir",
@@ -41,6 +43,12 @@
    "fieldtype": "Data",
    "label": "Website",
    "options": "URL"
+  },
+  {
+   "fieldname": "airline_code",
+   "fieldtype": "Data",
+   "label": "Airline Code",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
@@ -51,7 +59,7 @@
    "link_fieldname": "airline"
   }
  ],
- "modified": "2025-09-28 07:56:06.394020",
+ "modified": "2025-12-18 12:50:25.490536",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airline",
@@ -111,6 +119,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "airline_code",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
