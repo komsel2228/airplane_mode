@@ -13,11 +13,24 @@ frappe.ui.form.on("Airport", {
 		});
 
         frm.set_query('sub_terminal', 'terminal_details',(doc, cdt, cdn) => {
+            let row = locals[cdt][cdn];
             return {
                 "filters": {
-                    "is_group": 0
+                    "is_group": 0,
+                    "parent_airport_terminal": row.terminal
                 }
             };
 		});
 	},
+    refresh(frm){
+        frm.set_query('sub_terminal', 'terminal_details',(doc, cdt, cdn) => {
+            let row = locals[cdt][cdn];
+            return {
+                "filters": {
+                    "is_group": 0,
+                    "parent_airport_terminal": row.terminal
+                }
+            };
+		});
+    }
 });
