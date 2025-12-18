@@ -8,10 +8,25 @@ from frappe.utils.data import format_date
 
 class RentPayment(Document):
 	def validate(doc):
-		# if(doc.notes == None or doc.notes == ''):
 		doc.notes = f"Rent Payment for periode {format_date(get_first_day(doc.posting_date))} until {format_date(get_last_day(doc.posting_date))}"
-		doc.in_word = money_in_words(doc.amount,"IDR")
-		
+		doc.in_word = money_in_words(doc.amount,doc.currency)
+
+	def on_submit(doc):
+		if(doc.rent_type == 'Deposit'):
+			frappe.db.set_value('Airport Tenant', doc.airport_tenant, "deposit_payment", 1)
+		else:
+			start_date = doc.check_start_date()
+			if str(start_date) == str(doc.posting_date):
+				frappe.db.set_value('Airport Tenant', doc.airport_tenant, "first_rent_payment", 1)
+
+	def on_cancel(doc):
+		if(doc.rent_type == 'Deposit'):
+			frappe.db.set_value('Airport Tenant', doc.airport_tenant, "deposit_payment", 0)
+		else:
+			start_date = doc.check_start_date()
+			if str(start_date) == str(doc.posting_date):
+				frappe.db.set_value('Airport Tenant', doc.airport_tenant, "first_rent_payment", 0)
+
 	@frappe.whitelist()
 	def check_start_date(doc, method=None):
 		start_date = frappe.get_value('Airport Tenant Contract',{'parent': doc.airport_tenant,'is_completed':0,'contract_number':doc.contract_number},'start_date')

@@ -8,7 +8,7 @@ frappe.ui.form.on("Airport Tenant", {
 		});
 	},
   refresh(frm){
-    if(frm.doc.status == 'Booked'){
+    if((frm.doc.status == 'Booked') && (frm.doc.deposit_payment == 0)){
       frm.add_custom_button(__("Deposit Payment"), function () {
           frappe.model.open_mapped_doc({
             method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.create_deposit_payment",
@@ -17,6 +17,8 @@ frappe.ui.form.on("Airport Tenant", {
         },
           __("Create")
       );
+    }
+    if((frm.doc.status == 'Booked') && (frm.doc.first_rent_payment == 0)){
       frm.add_custom_button(__("Rent Payment"), function () {
           frappe.model.open_mapped_doc({
             method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.create_rent_payment",

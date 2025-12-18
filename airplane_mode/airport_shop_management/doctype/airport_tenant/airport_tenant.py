@@ -2,7 +2,6 @@
 # For license information, please see license.txt
 
 import frappe
-# from frappe.model.document import Document
 from frappe.website.website_generator import WebsiteGenerator
 from frappe.utils import flt
 
@@ -44,6 +43,7 @@ def create_rent_payment(source_name, target_doc=None):
     	currency = frappe.get_value('Airport Tenant Contract',{'parent':source.name,'is_completed':0},'currency')
     	contract_number = frappe.get_value('Airport Tenant Contract',{'parent':source.name,'is_completed':0},'contract_number')
     	target.airport = source.airport
+    	target.naming_series = None
     	target.posting_date = start_date
     	target.rent_type = "Rent"
     	target.is_paid = 0
@@ -72,8 +72,10 @@ def create_deposit_payment(source_name, target_doc=None):
     def update_item(source, target, source_parent):
     	start_date = frappe.get_value('Airport Tenant Contract',{'parent':source.name,'is_completed':0},'start_date')
     	target.airport_tenant = source.name
+    	target.naming_series = None
     	target.posting_date = start_date
     	target.rent_type = "Deposit"
+    	target.currency = "USD"
     	target.is_paid = 0
     	target.amount = flt(source.deposit_amount)
 

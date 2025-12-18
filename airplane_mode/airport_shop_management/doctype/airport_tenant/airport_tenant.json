@@ -16,6 +16,8 @@
   "airport_shop",
   "shop_type",
   "disabled",
+  "deposit_payment",
+  "first_rent_payment",
   "section_break_szdf",
   "tenant_email",
   "tenant_owner",
@@ -210,6 +212,20 @@
    "fieldtype": "Data",
    "label": "Shop Type",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "deposit_payment",
+   "fieldtype": "Check",
+   "label": "Deposit Payment",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "first_rent_payment",
+   "fieldtype": "Check",
+   "label": "1st Rent Payment",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -224,7 +240,7 @@
    "link_fieldname": "airport_tenant"
   }
  ],
- "modified": "2025-12-18 16:39:35.753622",
+ "modified": "2025-12-18 19:31:12.592381",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Tenant",

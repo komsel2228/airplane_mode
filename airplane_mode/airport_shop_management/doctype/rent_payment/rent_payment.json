@@ -27,6 +27,7 @@
  ],
  "fields": [
   {
+   "default": "RP-.YYYY.-.MM.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
@@ -36,7 +37,6 @@
   {
    "fieldname": "airport_tenant",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Tenant ID",
    "options": "Airport Tenant",
    "reqd": 1
@@ -89,6 +89,7 @@
   {
    "fieldname": "rent_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Rent Type",
    "options": "\nDeposit\nRent",
    "reqd": 1
@@ -107,6 +108,7 @@
    "fieldname": "amount",
    "fieldtype": "Currency",
    "label": "Amount",
+   "options": "currency",
    "read_only": 1
   },
   {
@@ -153,7 +155,7 @@
    "link_fieldname": "reference_document"
   }
  ],
- "modified": "2025-12-17 18:46:39.461936",
+ "modified": "2025-12-18 19:37:24.380503",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Rent Payment",
