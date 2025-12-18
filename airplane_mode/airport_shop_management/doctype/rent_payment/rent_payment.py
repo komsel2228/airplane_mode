@@ -5,6 +5,8 @@ import frappe
 from frappe.model.document import Document
 from frappe.utils import money_in_words, get_first_day, get_last_day
 from frappe.utils.data import format_date
+from frappe.core.doctype.communication.email import make
+from frappe.utils.background_jobs import enqueue
 
 class RentPayment(Document):
 	def validate(doc):
@@ -32,6 +34,48 @@ class RentPayment(Document):
 		start_date = frappe.get_value('Airport Tenant Contract',{'parent': doc.airport_tenant,'is_completed':0,'contract_number':doc.contract_number},'start_date')
 		if start_date:
 			return start_date
+
+	@frappe.whitelist()
+	def send_mail_rent_payment(doc):
+		docname = frappe.get_doc(doc.doctype,doc.name)
+		context = docname.as_dict()
+		rent_template = frappe.get_doc("Email Template", "Rent Receipt Email Template")
+		email = frappe.get_value("Airport Tenant",{'name':doc.airport_tenant},'tenant_email')
+		email_args = {
+			"recipients": email,
+			"subject": rent_template.subject,
+			"message": frappe.render_template(rent_template.response, context),
+			"now": True,
+			"attachments": [
+				frappe.attach_print(
+					doc.doctype,
+					doc.name,
+					file_name=doc.doctype,
+					print_format="Rent Receipt"
+				)
+			],
+		}
+		enqueue(
+			method=frappe.sendmail,
+			queue="short",
+			timeout=300,
+			is_async=True,
+			enqueue_after_commit=True,
+			**email_args,
+		)
+
+		comm = frappe.get_doc(
+			{
+				"doctype": "Communication",
+				"subject": rent_template.subject,
+				"content": frappe.render_template(rent_template.response, context),
+				"sent_or_received": "Sent",
+				"reference_doctype": doc.doctype,
+				"reference_name": doc.name
+			}
+		).insert(ignore_permissions=True)
+		
+		return "success"
 
 @frappe.whitelist()
 def update_status_document(status, name,tenant):

@@ -36,9 +36,24 @@ frappe.ui.form.on("Rent Payment", {
                         }, __('Create'));
                     }
                 }
-			});
+			});			
+		}
 
-			
+		if(frm.doc.status == 'Unpaid'){
+			frm.add_custom_button(__("Send Mail"), function () {
+					frappe.call({
+						doc: frm.doc,
+						method: "send_mail_rent_payment",
+						callback: function(res) {
+							if(res.message == "success") {
+								frm.reload_doc()
+								frappe.msgprint(__("Already send email"));
+							}
+						}
+					});
+				},
+				__("Send")
+			);
 		}
 	},
 });
