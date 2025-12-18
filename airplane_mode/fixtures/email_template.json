@@ -1,0 +1,12 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2025-12-18 23:54:44.556887",
+  "name": "Rent Receipt Email Template",
+  "response": "<div class=\"ql-editor read-mode\"><p>Notification:</p><p>{{notes}}</p><p><br></p><p>Details :</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Rent Payment: {{ name }}</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Posting Date: {{ posting_date }}</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Airport: {{airport}}</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Amount: {{amount}}</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Contact Number: {{contract_number}}</li></ol><p><br></p><p>Thanks You,</p><p>Finance Department</p><p>{{airport}}</p></div>",
+  "response_html": "",
+  "subject": "Rent Reminder ",
+  "use_html": 0
+ }
+]

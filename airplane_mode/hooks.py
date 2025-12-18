@@ -258,10 +258,16 @@ fixtures = [
             "name": ["in", "Rent Receipt"]
         }
 	},
-     {
+    {
         "doctype": "Report",
         "filters":	{
             "name": ["in", "Airport-Shop"]
+        }
+	},
+     {
+        "doctype": "Email Template",
+        "filters":	{
+            "name": ["in", "Rent Receipt Email Template"]
         }
 	}
 ]
