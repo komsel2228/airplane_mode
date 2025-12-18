@@ -11,7 +11,9 @@
   "column_break_voft",
   "address",
   "tab_terminal",
-  "terminal_details"
+  "terminal_details",
+  "tab_rent",
+  "rent_details"
  ],
  "fields": [
   {
@@ -54,12 +56,23 @@
    "fieldname": "address",
    "fieldtype": "Small Text",
    "label": "Address"
+  },
+  {
+   "fieldname": "tab_rent",
+   "fieldtype": "Tab Break",
+   "label": "Rent Shop"
+  },
+  {
+   "fieldname": "rent_details",
+   "fieldtype": "Table",
+   "label": "Rent Details",
+   "options": "Airport Detail Rent"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 09:34:38.510600",
+ "modified": "2025-12-18 15:28:10.311421",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airport",

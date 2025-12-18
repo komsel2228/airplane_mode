@@ -1,5 +1,4 @@
 {
- "_liked_by": "[\"Administrator\"]",
  "actions": [],
  "allow_guest_to_view": 1,
  "autoname": "naming_series:",
@@ -10,11 +9,12 @@
   "naming_series",
   "tenant_name",
   "tenant_group",
+  "airport",
   "image_tenant",
   "column_break_yqzp",
   "status",
-  "airport",
   "airport_shop",
+  "shop_type",
   "disabled",
   "section_break_szdf",
   "tenant_email",
@@ -122,7 +122,8 @@
    "default": "0",
    "fieldname": "deposit_amount",
    "fieldtype": "Currency",
-   "label": "Deposit Amount (in USD)"
+   "label": "Deposit Amount (in USD)",
+   "precision": "0"
   },
   {
    "fieldname": "column_break_wzyq",
@@ -202,6 +203,13 @@
    "options": "\nBooked\nRent\nExpired",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "fetch_from": "airport_shop.shop_type",
+   "fieldname": "shop_type",
+   "fieldtype": "Data",
+   "label": "Shop Type",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -216,7 +224,7 @@
    "link_fieldname": "airport_tenant"
   }
  ],
- "modified": "2025-12-17 20:23:42.219277",
+ "modified": "2025-12-18 16:39:35.753622",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Tenant",

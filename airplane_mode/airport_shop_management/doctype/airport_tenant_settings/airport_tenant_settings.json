@@ -13,7 +13,8 @@
   {
    "fieldname": "default_rent_amount",
    "fieldtype": "Currency",
-   "label": "Default Rent Amount / Tenant"
+   "label": "Default Rent Amount / Month",
+   "precision": "0"
   },
   {
    "default": "0",
@@ -24,14 +25,15 @@
   {
    "fieldname": "default_deposit_amount",
    "fieldtype": "Currency",
-   "label": "Default Deposit Amount / Tenant"
+   "label": "Default Deposit Amount (in USD)",
+   "precision": "0"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-12-11 20:29:19.169121",
+ "modified": "2025-12-18 16:38:52.810317",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Tenant Settings",

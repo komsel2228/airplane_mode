@@ -22,9 +22,14 @@ class AirportTenant(WebsiteGenerator):
 				frappe.db.set_value('Airport Shop', self.airport_shop,'is_available', "Yes", update_modified=True)
 			else:
 				frappe.db.set_value('Airport Shop', self.airport_shop,'is_available', "No", update_modified=True)
+				frappe.db.set_value('Airport Shop', self.airport_shop,'airport_tenant', self.name, update_modified=True)
 
 	def get_defa(self):
-		defa_deposit_amount = frappe.db.get_single_value('Airport Tenant Settings','default_deposit_amount')
+		defa_deposit_amount = frappe.db.sql("""select deposit_amount from `tabAirport Detail Rent` where parent = %s and shop_type = %s""",(self.airport,self.shop_type),as_dict=1)
+		if defa_deposit_amount == []:
+			defa_deposit_amount = frappe.db.get_single_value('Airport Tenant Settings','default_deposit_amount')
+		else:
+			defa_deposit_amount = defa_deposit_amount[0].deposit_amount
 		return defa_deposit_amount
 
 @frappe.whitelist()
@@ -82,3 +87,15 @@ def create_deposit_payment(source_name, target_doc=None):
 	}, target_doc, set_missing_values)
 
     return doclist
+
+@frappe.whitelist()
+def get_default_rent(airport,shop_type):
+	get_default_rent = frappe.db.sql("""select rent_amount,currency from `tabAirport Detail Rent` where parent = %s and shop_type = %s""",(airport,shop_type),as_dict=1)
+	if get_default_rent == []:
+		get_rent = 0
+		get_currency = None
+	else:
+		get_rent = get_default_rent[0].rent_amount
+		get_currency = get_default_rent[0].currency
+
+	return get_rent,get_currency

@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-18 15:25:09.402954",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "shop_type",
+  "deposit_amount",
+  "currency",
+  "rent_amount"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "shop_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shop Type",
+   "options": "Shop Type"
+  },
+  {
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rent Amount / Month",
+   "precision": "0"
+  },
+  {
+   "columns": 2,
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "columns": 3,
+   "fieldname": "deposit_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Deposit Amount (In USD)",
+   "precision": "0"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-12-18 16:38:32.858736",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Airport Detail Rent",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

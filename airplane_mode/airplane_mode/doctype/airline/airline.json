@@ -1,5 +1,4 @@
 {
- "_liked_by": "[\"Administrator\"]",
  "actions": [],
  "autoname": "prompt",
  "creation": "2025-09-24 18:35:12.587484",
@@ -23,7 +22,6 @@
   {
    "fieldname": "customer_care",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Customer Care",
    "reqd": 1
   },
@@ -47,6 +45,7 @@
   {
    "fieldname": "airline_code",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Airline Code",
    "reqd": 1
   }
@@ -59,7 +58,7 @@
    "link_fieldname": "airline"
   }
  ],
- "modified": "2025-12-18 12:50:25.490536",
+ "modified": "2025-12-18 13:07:01.017101",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airline",

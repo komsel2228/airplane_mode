@@ -49,11 +49,26 @@ frappe.ui.form.on("Airport Tenant Contract", {
     let row = locals[cdt][cdn]
     frm.events.update_contract_end_date(frm, cdt, cdn);
     if(row.start_date){
-      frappe.db.get_single_value("Airport Tenant Settings", "default_rent_amount").then((val) => {
-        frappe.model.set_value(cdt, cdn, "rent_amount", val)
+      frappe.call({
+        method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.get_default_rent",
+        args:{
+          airport: frm.doc.airport,
+          shop_type: frm.doc.shop_type
+        },
+        callback: function (r) {
+          if(r.message){
+            if (r.message[0] == flt(0)){
+              frappe.db.get_single_value("Airport Tenant Settings", "default_rent_amount").then((val) => {
+                frappe.model.set_value(cdt, cdn, "rent_amount", val)
+              });
+            }else{
+              frappe.model.set_value(cdt, cdn, "rent_amount", r.message[0])
+              frappe.model.set_value(cdt, cdn, "currency", r.message[1])
+            }
+          }
+        },
       });
     }
-
   },
   contract_term(frm, cdt, cdn) {
     frm.events.update_contract_end_date(frm, cdt, cdn);

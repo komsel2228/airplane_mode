@@ -3,9 +3,6 @@
 
 frappe.ui.form.on("Airplane Flight", {
 	setup(frm) {
-        frm.set_query("gate", function() {
-			return { filters: { airport: frm.doc.source_airport } };
-		});
         frm.set_query('airplane_crew', 'airplane_flight_crews',(doc, cdt, cdn) => {
             return {
                 "filters": {
@@ -48,7 +45,6 @@ frappe.ui.form.on("Airplane Flight", {
                             get_query: () => {
                                 return {
                                     filters: {
-                                        airport: frm.doc.source_airport,
                                         name: ["not in", frm.doc.gate]
                                     },
                                 };
@@ -81,9 +77,6 @@ frappe.ui.form.on("Airplane Flight", {
     },
     source_airport(frm){
         frm.set_value("gate",undefined)
-        frm.set_query("gate", function() {
-			return { filters: { airport: frm.doc.source_airport } };
-		});
     },
     airplane(frm) {
         frm.clear_table("airplane_flight_crews")

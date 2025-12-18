@@ -49,6 +49,7 @@
   {
    "fieldname": "designation",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Designation"
   },
   {
@@ -59,7 +60,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-11 12:58:45.368448",
+ "modified": "2025-12-18 13:19:47.030386",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Crew",

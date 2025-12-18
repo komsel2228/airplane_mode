@@ -135,7 +135,8 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route",
-   "no_copy": 1
+   "no_copy": 1,
+   "read_only": 1
   },
   {
    "fieldname": "section_break_qfsw",
@@ -163,7 +164,6 @@
    "fieldtype": "Link",
    "label": "Gate",
    "options": "Airport Gate",
-   "read_only": 1,
    "reqd": 1
   }
  ],
@@ -178,7 +178,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-12-16 23:45:29.564053",
+ "modified": "2025-12-18 13:59:42.201400",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
