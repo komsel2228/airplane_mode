@@ -7,6 +7,8 @@
  "field_order": [
   "default_rent_amount",
   "default_deposit_amount",
+  "email_template_rent",
+  "print_format_rent",
   "disabled_rent_reminder",
   "disabled_notif"
  ],
@@ -34,13 +36,23 @@
    "fieldname": "disabled_notif",
    "fieldtype": "Check",
    "label": "Disabled Notif by Email from Auto Repeat "
+  },
+  {
+   "fieldname": "email_template_rent",
+   "fieldtype": "Data",
+   "label": "Email Template for Rent Payment"
+  },
+  {
+   "fieldname": "print_format_rent",
+   "fieldtype": "Data",
+   "label": "Print Format for Rent Payment"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-12-19 08:05:32.471818",
+ "modified": "2025-12-19 12:47:21.050603",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Tenant Settings",
