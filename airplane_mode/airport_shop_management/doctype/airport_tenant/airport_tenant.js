@@ -4,7 +4,7 @@
 frappe.ui.form.on("Airport Tenant", {
 	setup(frm) {
     frm.set_query("airport_shop", function() {
-			return { filters: { airport: frm.doc.airport, disabled:0 }};
+			return { filters: { airport: frm.doc.airport, disabled:0, is_available:"Yes"}};
 		});
 	},
   refresh(frm){
@@ -32,7 +32,7 @@ frappe.ui.form.on("Airport Tenant", {
   airport(frm) {
     frm.set_value('airport_shop',undefined)
     frm.set_query("airport_shop", function() {
-			return { filters: { airport: frm.doc.airport, disabled:0 }};
+			return { filters: { airport: frm.doc.airport, disabled:0, is_available:"Yes"}};
 		});
 	},
   update_contract_end_date(frm, cdt, cdn) {
