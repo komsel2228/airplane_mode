@@ -41,17 +41,29 @@ frappe.ui.form.on("Rent Payment", {
 
 		if(frm.doc.status == 'Unpaid'){
 			frm.add_custom_button(__("Send Mail"), function () {
-					frappe.call({
+				frappe.db.get_single_value("Airport Tenant Settings", "disabled_rent_reminder").then((val) => {
+					if (val == 1){
+						frappe.msgprint(__("Send email disabled"));
+					}else{
+						frappe.call({
 						doc: frm.doc,
 						method: "send_mail_rent_payment",
+						freeze: true,
+						freeze_message: __("Sending email..."),
 						callback: function(res) {
 							if(res.message == "success") {
 								frm.reload_doc()
-								frappe.msgprint(__("Already send email"));
+								// frappe.msgprint(__("Already send email"));
+								frappe.show_alert({
+									message: __("Already send email"),
+									indicator: "green",
+								});
 							}
 						}
 					});
-				},
+					}
+				});
+			},
 				__("Send")
 			);
 		}

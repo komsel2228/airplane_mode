@@ -100,7 +100,7 @@
    "fieldtype": "Select",
    "label": "Status",
    "no_copy": 1,
-   "options": "Unpaid\nPaid",
+   "options": "Unpaid\nPaid\nCancelled",
    "read_only": 1,
    "reqd": 1
   },
@@ -155,7 +155,7 @@
    "link_fieldname": "reference_document"
   }
  ],
- "modified": "2025-12-18 19:37:24.380503",
+ "modified": "2025-12-19 08:51:55.383775",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Rent Payment",
@@ -189,6 +189,10 @@
   {
    "color": "Green",
    "title": "Paid"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
   }
  ]
 }

@@ -155,18 +155,19 @@ scheduler_events = {
 	# "all": [
 	# 	"airplane_mode.tasks.all"
 	# ],
-	"daily": [
-		"airplane_mode.overrides.scheduler.check_enable_rent_reminder"
-	],
+	# "daily": [
+	# 	"airplane_mode.tasks.daily"
+	# ],
 	# "hourly": [
 	# 	"airplane_mode.tasks.hourly"
 	# ],
 	# "weekly": [
 	# 	"airplane_mode.tasks.weekly"
 	# ],
-	# "monthly": [
-	# 	"airplane_mode.tasks.monthly"
-	# ],
+	"monthly": [
+		"airplane_mode.overrides.scheduler.check_enable_rent_reminder",
+        "airplane_mode.overrides.scheduler.send_mail_rent_payment"
+	],
 }
 
 # Testing
@@ -264,7 +265,7 @@ fixtures = [
             "name": ["in", "Airport-Shop"]
         }
 	},
-     {
+    {
         "doctype": "Email Template",
         "filters":	{
             "name": ["in", "Rent Receipt Email Template"]

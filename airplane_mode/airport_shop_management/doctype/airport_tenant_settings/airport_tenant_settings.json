@@ -7,7 +7,8 @@
  "field_order": [
   "default_rent_amount",
   "default_deposit_amount",
-  "disabled_rent_reminder"
+  "disabled_rent_reminder",
+  "disabled_notif"
  ],
  "fields": [
   {
@@ -27,13 +28,19 @@
    "fieldtype": "Currency",
    "label": "Default Deposit Amount (in USD)",
    "precision": "0"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled_notif",
+   "fieldtype": "Check",
+   "label": "Disabled Notif by Email from Auto Repeat "
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-12-18 16:38:52.810317",
+ "modified": "2025-12-19 08:05:32.471818",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Tenant Settings",
