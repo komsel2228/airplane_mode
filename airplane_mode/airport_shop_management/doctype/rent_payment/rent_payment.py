@@ -44,7 +44,7 @@ class RentPayment(Document):
 		if ((defa_email_template == None) or (defa_email_template == "")):
 			rent_template = frappe.get_doc("Email Template", "Rent Receipt Email Template")
 		else:
-			rent_template = defa_email_template
+			rent_template = frappe.get_doc("Email Template", defa_email_template)
 
 		defa_print_format_template = frappe.db.get_single_value('Airport Tenant Settings','print_format_rent')
 		if ((defa_print_format_template == None) or (defa_print_format_template == "")) :
