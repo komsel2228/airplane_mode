@@ -39,20 +39,22 @@
   },
   {
    "fieldname": "email_template_rent",
-   "fieldtype": "Data",
-   "label": "Email Template for Rent Payment"
+   "fieldtype": "Link",
+   "label": "Email Template for Rent Payment",
+   "options": "Email Template"
   },
   {
    "fieldname": "print_format_rent",
-   "fieldtype": "Data",
-   "label": "Print Format for Rent Payment"
+   "fieldtype": "Link",
+   "label": "Print Format for Rent Payment",
+   "options": "Print Format"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-12-19 12:47:21.050603",
+ "modified": "2025-12-19 13:51:53.469495",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Tenant Settings",
