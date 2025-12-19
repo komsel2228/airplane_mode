@@ -44,13 +44,13 @@ class RentPayment(Document):
 		if defa_email_template == None:
 			rent_template = frappe.get_doc("Email Template", "Rent Receipt Email Template")
 		else:
-			rent_template = frappe.get_doc("Email Template", defa_email_template)
+			frappe.throw("Fill Email Template first in Airport Tenant Settings")
 
 		defa_print_format_template = frappe.db.get_single_value('Airport Tenant Settings','print_format_rent')
 		if defa_print_format_template == None:
 			rent_print_format = "Rent Receipt"
 		else:
-			rent_print_format = defa_print_format_template
+			frappe.throw("Fill Print Format first in Airport Tenant Settings")
 			
 		email = frappe.get_value("Airport Tenant",{'name':doc.airport_tenant},'tenant_email')
 		email_args = {
@@ -112,7 +112,7 @@ def create_auto_repeat(source_name, target_doc=None):
 		recipient = frappe.get_value('Airport Tenant',{'name':source.airport_tenant},'tenant_email')
 
 		defa_print_format_template = frappe.db.get_single_value('Airport Tenant Settings','print_format_rent')
-		if defa_print_format_template == None:
+		if ((defa_print_format_template == None) or (defa_print_format_template == '')):
 			rent_print_format = "Rent Receipt"
 		else:
 			rent_print_format = defa_print_format_template
