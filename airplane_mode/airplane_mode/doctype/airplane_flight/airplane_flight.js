@@ -57,7 +57,7 @@ frappe.ui.form.on("Airplane Flight", {
                     if (!args) return;
                     dialog.hide();
                     return frappe.call({
-                        method: "airplane_mode.airplane_mode.doctype.airplane_flight.airplane_flight.change_gate",
+                        method: "airplane_mode.airplane_mode.doctype.airplane_flight.airplane_flight.process_change_gate",
                         args: {
                             "docname": frm.doc.name,
                             "to_gate": args.to_gate
