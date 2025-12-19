@@ -253,12 +253,12 @@ fixtures = [
             ["title", "=", "Show Me"]
         ]
     },
-    {
-        "doctype": "Print Format",
-        "filters":	{
-            "name": ["in", "Rent Receipt"]
-        }
-	},
+    # {
+    #     "doctype": "Print Format",
+    #     "filters":	{
+    #         "name": ["in", "Rent Receipt"]
+    #     }
+	# },
     {
         "doctype": "Report",
         "filters":	{
