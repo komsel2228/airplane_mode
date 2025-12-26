@@ -2,6 +2,11 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Airport Shop", {
+    setup(frm) {
+        frm.set_query("shop_type", function() {
+			return { filters: { enabled: 1}};
+		});
+	},
 	onload(frm) {
         frappe.call({
             method: "airplane_mode.airport_shop_management.doctype.airport_shop.airport_shop.get_terminal",
