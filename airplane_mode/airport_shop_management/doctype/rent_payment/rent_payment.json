@@ -15,6 +15,7 @@
   "column_break_dlkr",
   "posting_date",
   "rent_type",
+  "tenant_contract",
   "notes",
   "section_break_kxmf",
   "airport_tenant",
@@ -143,6 +144,12 @@
    "label": "Currency",
    "options": "Currency",
    "read_only": 1
+  },
+  {
+   "fieldname": "tenant_contract",
+   "fieldtype": "Link",
+   "label": "Tenant Contract",
+   "options": "Tenant Contract"
   }
  ],
  "grid_page_length": 50,
@@ -155,7 +162,7 @@
    "link_fieldname": "reference_document"
   }
  ],
- "modified": "2025-12-19 08:51:55.383775",
+ "modified": "2025-12-26 12:49:02.047108",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Rent Payment",

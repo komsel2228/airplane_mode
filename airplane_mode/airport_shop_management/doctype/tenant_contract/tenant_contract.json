@@ -1,0 +1,244 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2025-12-26 11:33:23.114328",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "airport_tenant",
+  "tenant_name",
+  "airport",
+  "shop_type",
+  "column_break_skja",
+  "posting_date",
+  "posting_time",
+  "remarks",
+  "deposit_payment",
+  "first_rent_payment",
+  "section_break_ikpp",
+  "start_date",
+  "contract_term",
+  "end_date",
+  "column_break_edrt",
+  "contract_number",
+  "contract_document",
+  "section_break_hylf",
+  "deposit_column",
+  "currency_deposit",
+  "deposit_amount",
+  "column_break_stdg",
+  "currency",
+  "rent_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TC-.YYYY.-.MM.-.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "airport_tenant",
+   "fieldtype": "Link",
+   "label": "Tenant ID",
+   "options": "Airport Tenant",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "airport_tenant.tenant_name",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tenant Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "airport_tenant.airport",
+   "fieldname": "airport",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Airport",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_skja",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_ikpp",
+   "fieldtype": "Section Break",
+   "label": "Contract Details"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contract_term",
+   "fieldtype": "Float",
+   "label": "Contract Term (in month)",
+   "mandatory_depends_on": "start_date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "mandatory_depends_on": "start_date"
+  },
+  {
+   "fieldname": "column_break_edrt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_number",
+   "fieldtype": "Data",
+   "label": "Contract Number"
+  },
+  {
+   "fieldname": "contract_document",
+   "fieldtype": "Attach",
+   "label": "Contract Document"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "fieldname": "section_break_hylf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_stdg",
+   "fieldtype": "Column Break",
+   "label": "Rent"
+  },
+  {
+   "default": "0",
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "label": "Rent Amount (in month)",
+   "precision": "0",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "deposit_payment",
+   "fieldtype": "Check",
+   "label": "Deposit Payment",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "first_rent_payment",
+   "fieldtype": "Check",
+   "label": "1st Rent Payment",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "deposit_amount",
+   "fieldtype": "Currency",
+   "label": "Deposit Amount (in USD)",
+   "precision": "0",
+   "reqd": 1
+  },
+  {
+   "default": "USD",
+   "fieldname": "currency_deposit",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "deposit_column",
+   "fieldtype": "Column Break",
+   "label": "Deposit"
+  },
+  {
+   "fetch_from": "airport_tenant.shop_type",
+   "fieldname": "shop_type",
+   "fieldtype": "Data",
+   "label": "Shop Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Tenant Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Reference",
+   "link_doctype": "Rent Payment",
+   "link_fieldname": "tenant_contract"
+  }
+ ],
+ "modified": "2025-12-26 12:57:12.783728",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Tenant Contract",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

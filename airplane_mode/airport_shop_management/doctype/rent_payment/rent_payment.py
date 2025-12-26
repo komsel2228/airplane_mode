@@ -16,18 +16,22 @@ class RentPayment(Document):
 	def on_submit(doc):
 		if(doc.rent_type == 'Deposit'):
 			frappe.db.set_value('Airport Tenant', doc.airport_tenant, "deposit_payment", 1)
+			frappe.db.set_value('Tenant Contract', doc.tenant_contract, "deposit_payment", 1)
 		else:
 			start_date = doc.check_start_date()
 			if str(start_date) == str(doc.posting_date):
 				frappe.db.set_value('Airport Tenant', doc.airport_tenant, "first_rent_payment", 1)
+				frappe.db.set_value('Tenant Contract', doc.tenant_contract, "first_rent_payment", 1)
 
 	def on_cancel(doc):
 		if(doc.rent_type == 'Deposit'):
 			frappe.db.set_value('Airport Tenant', doc.airport_tenant, "deposit_payment", 0)
+			frappe.db.set_value('Tenant Contract', doc.tenant_contract, "deposit_payment", 0)
 		else:
 			start_date = doc.check_start_date()
 			if str(start_date) == str(doc.posting_date):
 				frappe.db.set_value('Airport Tenant', doc.airport_tenant, "first_rent_payment", 0)
+				frappe.db.set_value('Tenant Contract', doc.tenant_contract, "first_rent_payment", 0)
 
 	@frappe.whitelist()
 	def check_start_date(doc, method=None):

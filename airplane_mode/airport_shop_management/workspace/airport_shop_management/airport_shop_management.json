@@ -35,8 +35,37 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Masters",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airport Shop",
+   "link_count": 0,
+   "link_to": "Airport Shop",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shop Type",
+   "link_count": 0,
+   "link_to": "Shop Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Documents",
-   "link_count": 4,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -64,6 +93,16 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Tenant Contract",
+   "link_count": 0,
+   "link_to": "Tenant Contract",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Rent Payment",
    "link_count": 0,
    "link_to": "Rent Payment",
@@ -80,38 +119,9 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Masters",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Airport Shop",
-   "link_count": 0,
-   "link_to": "Airport Shop",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Shop Type",
-   "link_count": 0,
-   "link_to": "Shop Type",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2025-12-17 11:01:23.687518",
+ "modified": "2025-12-26 12:54:23.827287",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Shop Management",

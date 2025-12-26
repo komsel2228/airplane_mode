@@ -19,6 +19,7 @@
   "deposit_payment",
   "first_rent_payment",
   "section_break_szdf",
+  "date_of_joining",
   "tenant_email",
   "tenant_owner",
   "column_break_ouvl",
@@ -31,7 +32,7 @@
   "published",
   "route",
   "contract_details_tab",
-  "date_of_joining",
+  "column_break_gfzb",
   "column_break_wzyq",
   "deposit_amount",
   "section_break_bing",
@@ -226,6 +227,10 @@
    "fieldtype": "Check",
    "label": "1st Rent Payment",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gfzb",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -236,11 +241,16 @@
  "links": [
   {
    "group": "Reference",
+   "link_doctype": "Tenant Contract",
+   "link_fieldname": "airport_tenant"
+  },
+  {
+   "group": "Reference",
    "link_doctype": "Rent Payment",
    "link_fieldname": "airport_tenant"
   }
  ],
- "modified": "2025-12-18 19:31:12.592381",
+ "modified": "2025-12-26 13:00:39.399369",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Tenant",

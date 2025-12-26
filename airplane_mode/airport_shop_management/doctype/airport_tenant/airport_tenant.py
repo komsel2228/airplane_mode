@@ -101,3 +101,27 @@ def get_default_rent(airport,shop_type):
 		get_currency = get_default_rent[0].currency
 
 	return get_rent,get_currency
+
+@frappe.whitelist()
+def create_tenant_contract(source_name, target_doc=None):
+    from frappe.model.mapper import get_mapped_doc, map_child_doc
+    def set_missing_values(source, target):
+        pass
+
+    def update_item(source, target, source_parent):
+    	target.airport_tenant = source.name
+    	target.tenant_name = source.tenant_name
+    	target.airport = source.airport
+    	target.deposit_amount = source.deposit_amount
+
+    doclist = get_mapped_doc("Airport Tenant", source_name, {
+		"Airport Tenant": {
+			"doctype": "Tenant Contract",
+			"field_map": {
+	       
+	        },
+			"postprocess": update_item
+		}
+	}, target_doc, set_missing_values)
+
+    return doclist

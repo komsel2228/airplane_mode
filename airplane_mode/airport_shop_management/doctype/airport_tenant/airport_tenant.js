@@ -8,20 +8,31 @@ frappe.ui.form.on("Airport Tenant", {
 		});
 	},
   refresh(frm){
-    if((frm.doc.status == 'Booked') && (frm.doc.deposit_payment == 0)){
-      frm.add_custom_button(__("Deposit Payment"), function () {
+    // if((frm.doc.status == 'Booked') && (frm.doc.deposit_payment == 0)){
+    //   frm.add_custom_button(__("Deposit Payment"), function () {
+    //       frappe.model.open_mapped_doc({
+    //         method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.create_deposit_payment",
+    //         frm: frm,
+    //       });
+    //     },
+    //       __("Create")
+    //   );
+    // }
+    // if((frm.doc.status == 'Booked') && (frm.doc.first_rent_payment == 0)){
+    //   frm.add_custom_button(__("Rent Payment"), function () {
+    //       frappe.model.open_mapped_doc({
+    //         method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.create_rent_payment",
+    //         frm: frm,
+    //       });
+    //     },
+    //       __("Create")
+    //   );
+    // }
+
+    if((frm.doc.status == 'Booked')){
+      frm.add_custom_button(__("Tenant Contract"), function () {
           frappe.model.open_mapped_doc({
-            method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.create_deposit_payment",
-            frm: frm,
-          });
-        },
-          __("Create")
-      );
-    }
-    if((frm.doc.status == 'Booked') && (frm.doc.first_rent_payment == 0)){
-      frm.add_custom_button(__("Rent Payment"), function () {
-          frappe.model.open_mapped_doc({
-            method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.create_rent_payment",
+            method: "airplane_mode.airport_shop_management.doctype.airport_tenant.airport_tenant.create_tenant_contract",
             frm: frm,
           });
         },
