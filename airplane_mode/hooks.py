@@ -270,6 +270,9 @@ fixtures = [
         "filters":	{
             "name": ["in", "Rent Receipt Email Template"]
         }
-	}
+	},
+    {
+        "doctype": "Shop Type"
+	},
 ]
 
